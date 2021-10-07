@@ -1,5 +1,5 @@
-vendor: 0x0
-product: 0x0
+vendor: "0x32e4"
+product: "0x9601"
 serial: ""
 #If the above parameters aren't unique, choose the first match
 index: 0

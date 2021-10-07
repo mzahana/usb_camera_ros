@@ -10,5 +10,5 @@
       <rosparam command="load" file="$(arg config_file)"/>
     </node>
   </group>
-  
+
 </launch>
