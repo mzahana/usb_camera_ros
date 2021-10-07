@@ -15,3 +15,4 @@ timestamp_method: "start"
 # Manula:0 , aperture_priority:3
 auto_exposure: 3
 auto_white_balance: false
+camera_info_url: ""

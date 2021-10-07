@@ -1,12 +1,14 @@
 <launch>
-  <!-- Must match the name space-->
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" output="screen"/>
+
+  <arg name="config_file" default="$(find usb_camera_ros)/config/cam_settings.yaml"/>
   <arg name="cam_ns" default="usb_camera"/>
-  <arg name="config_file" default="$(find usb_camera)/config/cam_settings.yaml"/>
+  <arg name="respawn" default="true"/>
+
   <group ns="$(arg cam_ns)">
-    <node pkg="libuvc_camera" type="camera_node" name="mycam">
+    <node pkg="nodelet" type="nodelet" name="libuvc_camera" args="load libuvc_camera/driver /nodelet_manager" output="screen" required="$(eval not respawn)" respawn="$(arg respawn)">
       <rosparam command="load" file="$(arg config_file)"/>
-      <param name="camera_info_url" value="file:///tmp/cam.yaml"/>
     </node>
   </group>
-
+  
 </launch>
