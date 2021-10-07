@@ -1,0 +1,17 @@
+vendor: 0x0
+product: 0x0
+serial: ""
+#If the above parameters aren't unique, choose the first match
+index: 0
+
+# Image size and type -->
+width: 640
+height: 480
+# choose whichever uncompressed format the camera supports: or yuyv/nv12/mjpeg
+video_mode: "uncompressed"
+frame_rate: 15
+# start of frame -->
+timestamp_method: "start" 
+# Manula:0 , aperture_priority:3
+auto_exposure: 3
+auto_white_balance: false

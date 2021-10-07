@@ -1,0 +1,12 @@
+<launch>
+  <!-- Must match the name space-->
+  <arg name="cam_ns" default="usb_camera"/>
+  <arg name="config_file" default="$(find usb_camera)/config/cam_settings.yaml"/>
+  <group ns="$(arg cam_ns)">
+    <node pkg="libuvc_camera" type="camera_node" name="mycam">
+      <rosparam command="load" file="$(arg config_file)"/>
+      <param name="camera_info_url" value="file:///tmp/cam.yaml"/>
+    </node>
+  </group>
+
+</launch>
